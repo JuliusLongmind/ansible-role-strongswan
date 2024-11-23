@@ -22,8 +22,8 @@ strongswan_settings:
   charon:
     load_modular: "yes"
     fragment_size: 1400
-    user: "strongswan"
-    group: "strongswan"
+    user: "{% ansible_facts ['distribution'] != 'Archlinux' %}strongswan{% else %}root{% endif %}"
+    group: "{% ansible_facts ['distribution'] != 'Archlinux' %}strongswan{% else %}root{% endif %}"
     dns1: 1.1.1.1
     dns2: 9.9.9.9
     start-scripts:
