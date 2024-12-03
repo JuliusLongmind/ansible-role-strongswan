@@ -22,8 +22,8 @@ strongswan_settings:
   charon:
     load_modular: "yes"
     fragment_size: 1400
-    user: "{% if ansible_facts['distribution'] in ['Archlinux', 'OpenSuse'] %}strongswan{% else %}root{% endif %}"
-    group: "{% if ansible_facts['distribution'] in ['Archlinux', 'OpenSuse'] %}strongswan{% else %}root{% endif %}"
+    user: "{% if ansible_facts['distribution'] in ['OpenSuse'] %}strongswan{% else %}root{% endif %}"
+    group: "{% if ansible_facts['distribution'] in ['OpenSuse'] %}strongswan{% else %}root{% endif %}"
     dns1: 1.1.1.1
     dns2: 9.9.9.9
     start-scripts:
